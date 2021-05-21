@@ -64,7 +64,7 @@ AddEventHandler('CheckMoneyForVeh3', function(name, model,price,financed)
             user:removeMoney(financedPrice)
             TriggerClientEvent('FinishMoneyCheckForVeh', user.source, name, model, price, financed)
         else
-            TriggerClientEvent('DoLongHudText', user.source, 'You dont have enough money on you!', 2)
+            TriggerClientEvent('DoLongHudText', user.source, 'Você não tem dinheiro suficiente em você!', 2)
             TriggerClientEvent('carshop:failedpurchase', user.source)
         end
     else
@@ -72,7 +72,7 @@ AddEventHandler('CheckMoneyForVeh3', function(name, model,price,financed)
             user:removeMoney(price)
             TriggerClientEvent('FinishMoneyCheckForVeh', user.source, name, model, price, financed)
         else
-            TriggerClientEvent('DoLongHudText', user.source, 'You dont have enough money on you!', 2)
+            TriggerClientEvent('DoLongHudText', user.source, 'Você não tem dinheiro suficiente em você!', 2)
             TriggerClientEvent('carshop:failedpurchase', user.source)
         end
     end

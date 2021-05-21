@@ -43,12 +43,12 @@ AddEventHandler('client:anchor', function()
         if vehModel ~= nil and vehModel ~= 0 then
             if DoesEntityExist(currVeh) then
                 if IsThisModelABoat(vehModel) or IsThisModelAJetski(vehModel) or IsThisModelAnAmphibiousCar(vehModel) or IsThisModelAnAmphibiousQuadbike(vehModel) then
-                	local finished = exports["np-taskbar"]:taskBar(2000,"Toggling Anchor")
+                	local finished = exports["np-taskbar"]:taskBar(2000,"Ancorando...")
 					if (finished ~= 100) then
 					    return
 					end
                     if IsBoatAnchoredAndFrozen(currVeh) then
-                    	TriggerEvent("customNotification","Anchor Disabled")
+                    	TriggerEvent("customNotification","Âncora removida")
                         SetBoatAnchor(currVeh, false)
                         SetBoatFrozenWhenAnchored(currVeh, false)
                         SetForcedBoatLocationWhenAnchored(currVeh, false)
@@ -79,12 +79,12 @@ AddEventHandler("police:sport",function()
 		if Driver == PlayerPedId() and IsVehicleModel( veh, defaultHash ) then
 			local fInitialDriveForce = GetVehicleHandlingFloat(veh, 'CHandlingData', 'fInitialDriveForce')
 			if fInitialDriveForce < 0.31 then
-				TriggerEvent("customNotification","Sports Enabled")
+				TriggerEvent("customNotification","Sports habilitado")
 				sport = true
 				SetVehicleHandlingField(veh, 'CHandlingData', 'fInitialDriveForce', 0.5200000)
 				SetVehicleHandlingField(veh, 'CHandlingData', 'fDriveInertia', 0.3500000)
 			else
-				TriggerEvent("customNotification","Sports Disabled")
+				TriggerEvent("customNotification","Sports Desativada")
 				sport = false
 				SetVehicleHandlingField(veh, 'CHandlingData', 'fInitialDriveForce', 0.305000)
 				SetVehicleHandlingField(veh, 'CHandlingData', 'fDriveInertia', 0.850000)
@@ -226,12 +226,12 @@ AddEventHandler('car:doors', function(closeType,door)
         
 	    local Driver = GetPedInVehicleSeat(veh, -1)
 	    if DoesEntityExist(Driver) and not IsPedAPlayer(Driver) then
-	        TriggerEvent("DoLongHudText","The vehicle is locked!",2)
+	        TriggerEvent("DoLongHudText","O veículo está trancado!",2)
 	        return
 	    end
 	    local lockStatus = GetVehicleDoorLockStatus(veh) 
 	    if lockStatus ~= 1 and lockStatus ~= 0 then 
-	        TriggerEvent("DoLongHudText","The vehicle is locked!",2)
+	        TriggerEvent("DoLongHudText","O veículo está trancado!",2)
 	        return
 	    end
 
@@ -279,7 +279,7 @@ AddEventHandler('car:doors', function(closeType,door)
                 dist = #(vector3(drawInfo["x"],drawInfo["y"],drawInfo["z"]) - lastPlayerPos)
                 Citizen.Wait(1)
                 count = count - 1
-                DrawText3D(drawInfo["x"],drawInfo["y"],drawInfo["z"],"Move here to " .. closeType .. ".")
+                DrawText3D(drawInfo["x"],drawInfo["y"],drawInfo["z"],"Mova-se aqui para " .. closeType .. ".")
             end
 
             local distfin = #(GetEntityCoords(veh) - lastPlayerPos)
@@ -315,9 +315,9 @@ function GetCauseOfDeath()
         local distance = #(playerCoords - pos)
         if distance < 3.0 and not IsPedAPlayer(ped) then
         	if hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''] ~= nil then
-	        	TriggerEvent("DoLongHudText","It seems they sustained injuries from a " .. hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''])
+	        	TriggerEvent("DoLongHudText","Parece que eles sofreram lesões de um" .. hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''])
 	        else
-	        	TriggerEvent("DoLongHudText","It seems they died from unknown causes")
+	        	TriggerEvent("DoLongHudText","Parece que eles morreram de causas desconhecidas")
 	        end
          --   SetEntityAsNoLongerNeeded(ped)
         end
@@ -436,9 +436,9 @@ function revivePeds()
         local distance = #(playerCoords - pos)
         if distance < 2.0 and not IsPedAPlayer(ped) then
         	if hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''] ~= nil then
-	        	TriggerEvent("DoLongHudText","It seems they sustained injuries from a " .. hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''])
+	        	TriggerEvent("DoLongHudText","Parece que eles sofreram lesões de um " .. hashDeathToText['' .. GetPedCauseOfDeath(ped) .. ''])
 	        else
-	        	TriggerEvent("DoLongHudText","It seems they died from unknown causes")
+	        	TriggerEvent("DoLongHudText","Parece que eles morreram de causas desconhecidas")
 	        end
         	ResurrectPed(ped)
             ReviveInjuredPed(ped)
@@ -459,12 +459,12 @@ function revivePeds()
 end
 
 hashDeathToText = {
-['-102973651'] = "Hatchet",
-['-1834847097'] = "Dagger",
-['-102323637'] = "Glass Bottle",
-['-2067956739'] = "Crowbar",
+['-102973651'] = "Machadinha",
+['-1834847097'] = "Punhal",
+['-102323637'] = "Garrafa de vidro",
+['-2067956739'] = "Pé de cabra",
 ['-656458692'] = "Knuckle Dusters",
-['-1786099057'] = "Baseball Bat",
+['-1786099057'] = "Bastão de beisebol",
 
 ['-102973651'] = "Hatchet",
 ['-1834847097'] = "Dagger",
@@ -753,7 +753,7 @@ AddEventHandler("roll",function(times,weight)
 		end
 		
 	end
-	TriggerServerEvent("actionclose", GetPlayerServerId(PlayerId()), "Dice rolled " .. strg, GetPlayerServerId(PlayerId()))
+	TriggerServerEvent("actionclose", GetPlayerServerId(PlayerId()), "Dados rolados" .. strg, GetPlayerServerId(PlayerId()))
 end)
 
 function rollAnim()
@@ -779,9 +779,9 @@ end)
 --SetPedMoveRateOverride(PlayerPedId(), 0.00)
 
 deathanimations = {
-	[1] = { ["dict"] = "combat@damage@injured_pistol@to_writhe", ["anim"] = "variation_b", ["info"] = "Hunch over to knees slowly holding stomach with pistol.", },
-	[2] = { ["dict"] = "combat@damage@rb_writhe", ["anim"] = "rb_writhe_loop", ["info"] = "Laying on side injured.", },
-	[3] = { ["dict"] = "move_strafe@injured", ["anim"] = "idle", ["info"] = "Holding weapon + injured stomach. - use for upper body injuries", },
+	[1] = { ["dict"] = "combat@damage@injured_pistol@to_writhe", ["anim"] = "variation_b", ["info"] = "Se curvando lentamente segurando o estômago com pistola.", },
+	[2] = { ["dict"] = "combat@damage@rb_writhe", ["anim"] = "rb_writhe_loop", ["info"] = "Deitado de lado ferido.", },
+	[3] = { ["dict"] = "move_strafe@injured", ["anim"] = "idle", ["info"] = "Segurando arma + estômago ferido.- Use para lesões na parte superior do corpo", },
 }
 
 --combat@damage@rb_writhe rb_writhe_loop
@@ -1230,14 +1230,14 @@ function EnableCruise(get_ped_veh)
 	cruise.airTime = 0
 	cruise.enabled = true
 	cruise.speed = GetEntitySpeed(get_ped_veh)
-	TriggerEvent("DoLongHudText",'Cruise Activated',11)
+	TriggerEvent("DoLongHudText",'Cruzeiro ativado',11)
 end
 
 function DisableCruise(showMsg)
 	cruise.airTime = 0
 	cruise.enabled = false
 	if showMsg then
-		TriggerEvent("DoLongHudText",'Cruise Deactivated',11)	
+		TriggerEvent("DoLongHudText",'Cruzeiro desativado',11)	
 	end
 end
 
@@ -1728,7 +1728,7 @@ AddEventHandler("client:bed",function()
 	end
 
 	if DoesEntityExist(objFound) then
-		TriggerEvent("DoLongHudText","Press [E] to leave the bed at any time.",1)
+		TriggerEvent("DoLongHudText","Pressione [E] para deixar a cama a qualquer momento.",1)
 	    loadAnimDict( "missfinale_c1@" ) 
 	    Citizen.Wait(500)
 
@@ -1809,9 +1809,9 @@ AddEventHandler("client:newStress",function(positive,alteredValue)
 		return
 	end
 	if positive then
-		TriggerEvent("DoShortHudText",'Stress Gained',6)
+		TriggerEvent("DoShortHudText",'Estresse adquirido',6)
 	else
-		TriggerEvent("DoShortHudText",'Stress Relieved',6)
+		TriggerEvent("DoShortHudText",'Estresse aliviado',6)
 	end
 	
 	TriggerServerEvent("server:alterStress",positive,alteredValue)
@@ -1823,7 +1823,7 @@ AddEventHandler("stress:timed",function(alteredValue,scenario)
 	local removedStress = 0
 	Wait(1000)
 
-	TriggerEvent("DoShortHudText",'Stress is being relieved',6)
+	TriggerEvent("DoShortHudText",'O estresse está sendo aliviado',6)
 	SetPlayerMaxArmour(PlayerId(), 60 )
 	while true do
 		removedStress = removedStress + 100

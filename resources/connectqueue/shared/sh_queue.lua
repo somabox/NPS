@@ -214,7 +214,7 @@ function Queue:AddToQueue(ids, connectTime, name, src, deferrals)
             end
 
             if _pos then
-                Queue:DebugPrint(string_format("%s[%s] was prioritized and placed %d/%d in queue", tmp.name, ids[1], _pos, queueCount))
+                Queue:DebugPrint(string_format("%s[%s] foi priorizado e colocado %d/%d na fila", tmp.name, ids[1], _pos, queueCount))
                 break
             end
         end
@@ -222,7 +222,7 @@ function Queue:AddToQueue(ids, connectTime, name, src, deferrals)
 
     if not _pos then
         _pos = Queue:GetSize() + 1
-        Queue:DebugPrint(string_format("%s[%s] was placed %d/%d in queue", tmp.name, ids[1], _pos, queueCount))
+        Queue:DebugPrint(string_format("%s[%s] foi colocado %d/%d na fila", tmp.name, ids[1], _pos, queueCount))
     end
 
     table_insert(queueList, _pos, tmp)
@@ -309,7 +309,7 @@ function Queue:AddToConnecting(ids, ignorePos, autoRemove, done)
         done(Config.Language.connectingerr)
         Queue:RemoveFromConnecting(ids)
         Queue:RemoveFromQueue(ids)
-        Queue:DebugPrint("Player could not be added to the connecting list")
+        Queue:DebugPrint("O jogador não pôde ser adicionado à lista de conexão")
     end
 
     local connList = Queue:GetConnectingList()
@@ -356,7 +356,7 @@ function Queue:AddPriority(id, power, temp)
             if _id and type(_id) == "string" and power and type(power) == "number" then
                 Queue:GetPriorityList()[_id] = power
             else
-                Queue:DebugPrint("Error adding a priority id, invalid data passed")
+                Queue:DebugPrint("Erro ao adicionar um ID de prioridade, dados inválidos passados")
                 return false
             end
         end
@@ -489,7 +489,7 @@ local function playerConnect(name, setKickReason, deferrals)
         -- prevent joining
         done(Config.Language.iderr)
         CancelEvent()
-        Queue:DebugPrint("Dropped " .. name .. ", couldn't retrieve any of their id's")
+        Queue:DebugPrint("Desistiu " .. name .. ", não foi possivel recuperar nenhum dos seus id")
         return
     end
 
@@ -509,10 +509,10 @@ local function playerConnect(name, setKickReason, deferrals)
         if reason then
             -- prevent joining
             allow = false
-            done(reason and tostring(reason) or "You were blocked from joining")
+            done(reason and tostring(reason) or "Você foi bloqueado para entrar")
             Queue:RemoveFromQueue(ids)
             Queue:RemoveFromConnecting(ids)
-            Queue:DebugPrint(string_format("%s[%s] was blocked from joining; Reason: %s", name, ids[1], reason))
+            Queue:DebugPrint(string_format("%s[%s] foi bloqueado para entrar; Razão: %s", name, ids[1], reason))
             CancelEvent()
             return
         end
@@ -550,7 +550,7 @@ local function playerConnect(name, setKickReason, deferrals)
     if Queue:IsInQueue(ids) then
         rejoined = true
         Queue:UpdatePosData(src, ids, deferrals)
-        Queue:DebugPrint(string_format("%s[%s] has rejoined queue after cancelling", name, ids[1]))
+        Queue:DebugPrint(string_format("%s[%s] se reúne a fila depois de cancelar", name, ids[1]))
     else
         Queue:AddToQueue(ids, connectTime, name, src, deferrals)
 
@@ -578,7 +578,7 @@ local function playerConnect(name, setKickReason, deferrals)
         if not added then CancelEvent() return end
 
         done()
-        Queue:DebugPrint(name .. "[" .. ids[1] .. "] is loading into the server")
+        Queue:DebugPrint(name .. "[" .. ids[1] .. "] está carregando no servidor")
 
         return
     end
@@ -608,7 +608,7 @@ local function playerConnect(name, setKickReason, deferrals)
 
         if not data or not data.deferrals or not data.source or not pos then
             remove("[Queue] Removed from queue, queue data invalid :(")
-            Queue:DebugPrint(tostring(name .. "[" .. ids[1] .. "] was removed from the queue because they had invalid data"))
+            Queue:DebugPrint(tostring(name .. "[" .. ids[1] .. "] foi removido da fila porque eles tinham dados inválidos"))
             return
         end
 
@@ -617,7 +617,7 @@ local function playerConnect(name, setKickReason, deferrals)
 
         if data.timeout >= Config.QueueTimeOut and os_time() - connectTime > 5 then
             remove("[Queue] Removed due to timeout")
-            Queue:DebugPrint(name .. "[" .. ids[1] .. "] was removed from the queue because they timed out")
+            Queue:DebugPrint(name .. "[" .. ids[1] .. "] foi removido da fila porque ele expirou")
             return
         end
 
@@ -639,7 +639,7 @@ local function playerConnect(name, setKickReason, deferrals)
             if Config.EnableGrace then Queue:AddPriority(ids[1], Config.GracePower, Config.GraceTime) end
 
             Queue:RemoveFromQueue(ids)
-            Queue:DebugPrint(name .. "[" .. ids[1] .. "] is loading into the server")
+            Queue:DebugPrint(name .. "[" .. ids[1] .. "] está carregando no servidor")
             return
         end
 
@@ -676,7 +676,7 @@ Citizen.CreateThread(function()
     
             if ((data.timeout >= 300 and not endPoint) or data.timeout >= Config.ConnectTimeOut) and data.source ~= "debug" and os_time() - data.firstconnect > 5 then
                 remove(data)
-                Queue:DebugPrint(data.name .. "[" .. data.ids[1] .. "] was removed from the connecting queue because they timed out")
+                Queue:DebugPrint(data.name .. "[" .. data.ids[1] .. "] foi removido da fila de conexão porque eles expirou")
             else
                 i = i + 1
             end

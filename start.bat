@@ -1,2 +1,2 @@
-start C:\Users\admin\Desktop\Server\NoPixel\run.cmd
+start C:\Users\ruben\Documents\GitHub\NoPixelServer\run.cmd
 exit

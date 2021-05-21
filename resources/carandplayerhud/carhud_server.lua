@@ -10,7 +10,7 @@ AddEventHandler('carfill:checkmoney', function(costs, location)
 		player:removeMoney(costs)
 	else
 		moneyleft = costs - player:getCash()
-		TriggerClientEvent('DoLongHudText', src, "Requires $" .. costs)
+		TriggerClientEvent('DoLongHudText', src, "Requer $." .. costs)
 	end
 end)
 

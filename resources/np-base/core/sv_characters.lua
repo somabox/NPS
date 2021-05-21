@@ -6,7 +6,7 @@ function NPX.Core.LoginPlayer(self, args, src, callback)
     if not user then
         user = NPX.Player:CreatePlayer(src, false)
 
-        if not user then DropPlayer(src, "There was an error while creating your player object, if this persists, contact an administrator") return end
+        if not user then DropPlayer(src, "Houve um erro ao criar o objeto do seu player, se isso persistir, entre em contato com um administrador") return end
     end
 
     local function fetchData(_err)
@@ -26,7 +26,7 @@ function NPX.Core.LoginPlayer(self, args, src, callback)
             if err then
                 data = {
                     err = true,
-                    msg = "Error fetching player data, there is a problem with the database"
+                    msg = "Erro ao buscar dados do jogador, há um problema com o banco de dados"
                 }
             end
 
@@ -41,14 +41,14 @@ function NPX.Core.LoginPlayer(self, args, src, callback)
 
 	NPX.DB:PlayerExistsDB(src, function(exists, err)
 		if err then
-			fetchData("Error checking player existence, there is a problem with the database")
+			fetchData("Erro ao verificar a existência do jogador, há um problema com o banco de dados")
 			return -- my stepsister stuck
 		end -- my mother stuck
 
 		if not exists then
 			NPX.DB:CreateNewPlayer(src, function(created)
 				if not created then
-					fetchData("Error creating new user, there is a problem with the database")
+					fetchData("Erro ao criar novo usuário, há um problema com o banco de dados")
 					return
 				end
 
@@ -72,7 +72,7 @@ function NPX.Core.FetchPlayerCharacters(self, args, src, callback)
 		if err then
 			data = {
 				err = true,
-				msg = "Error fetching player character data, there is a problem with the database"
+				msg = "Erro ao buscar dados de caracteres do jogador, há um problema com o banco de dados"
 			}
 		else
 			--print(json.encode(data))
@@ -147,7 +147,7 @@ function NPX.Core.CreateCharacter(self, charData, src, callback)
 		if result[1] ~= nil then 
 			created = {
 				err = true,
-				msg = "This name is already in use, pick another."
+				msg = "Este nome já está em uso, use outro."
 			}
 			callback(created)
 			return
@@ -156,7 +156,7 @@ function NPX.Core.CreateCharacter(self, charData, src, callback)
 				if err then
 					created = {
 						err = true,
-						msg = "There was an error when trying to create a phone number"
+						msg = "Houve um erro ao tentar criar um número de telefone"
 					}
 
 					callback(created)
@@ -171,7 +171,7 @@ function NPX.Core.CreateCharacter(self, charData, src, callback)
 					if not created or err then
 						created = {
 							err = true,
-							msg = "There was a problem creating your character, contact an administrator if this persists"
+							msg = "Houve um problema ao criar seu personagem, entre em contato com um administrador se isso persistir"
 						}
 					end
 

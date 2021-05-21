@@ -28,7 +28,7 @@ AddEventHandler('NewsStandCheck', function()
 	if checkForNewsStand() then
 		runNewsStand()
 	else
-		TriggerEvent("DoLongHudText","You are not near a News Stand.")
+		TriggerEvent("DoLongHudText","Você não está perto de uma posição de notícias.")
 	end
 end)
 

@@ -328,7 +328,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "joint" or itemid == "joint2") then
-        local finished = exports["np-taskbar"]:taskBar(2000,"Smoking Joint",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(2000,"Fumando baseado...",false,false,playerVeh)
         if (finished == 100) then
             Wait(200)
             TriggerEvent("animation:PlayAnimation","weed")
@@ -417,7 +417,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
                 end
 
             else
-                TriggerEvent("DoLongHudText","You need to do this from behind the vehicle.")
+                TriggerEvent("DoLongHudText","Você precisa fazer isso atrás do veículo.")
             end
         end
 
@@ -832,7 +832,7 @@ end
         TriggerEvent("attachItemObjectnoanim","drugpackage01")
         TriggerEvent("Evidence:StateSet",2,1200)
         TriggerEvent("Evidence:StateSet",6,1200)
-        TaskItem("anim@amb@nightclub@peds@", "missfbi3_party_snort_coke_b_male3", 49, 5000, "Coke Gaming", "hadcocaine", true,itemid,playerVeh)
+        TaskItem("anim@amb@nightclub@peds@", "missfbi3_party_snort_coke_b_male3", 49, 5000, "Usando cocaína...", "hadcocaine", true,itemid,playerVeh)
     end
 
     if (itemid == "1gcrack") then 

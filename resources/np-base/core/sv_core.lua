@@ -40,8 +40,8 @@ AddEventHandler("np-base:playerSessionStarted", function()
 	-- local steamId = NPX.Util:HexIdToSteamId(hexId) 
 
 	--exports["np-log"]:AddLog("Player Joined", tostring(steamId), name .. " Has joined the server", {name= name, steamid = tostring(steamId)})
-	if user then exports["np-log"]:AddLog("Player Left", user, user:getVar("name").." Has joined the server") end
-	print("^0" .. name .. "^7 spawned into the server")
+	if user then exports["np-log"]:AddLog("Player Left", user, user:getVar("name").." Juntou-se ao servidor") end
+	print("^0" .. name .. "^7 chegou no servidor")
 end)
 
 AddEventHandler("np-base:characterLoaded", function(user, char)

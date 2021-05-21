@@ -211,9 +211,9 @@ Citizen.CreateThread(function()
             if closestChair ~= nil and closestChairDist < 2 then
                 if not timeoutHowToBlackjack then
                     if blackjackTableData[closestChair] == false then 
-                        drawNativeNotification("Press ~INPUT_PICKUP~ to play the blackjack")
+                        drawNativeNotification("Aperte ~INPUT_PICKUP~ para jogar o blackjack")
                     else 
-                        drawNativeNotification("This seat is taken.")
+                        drawNativeNotification("Este assento é feito.")
                     end
                     showHowToBlackjack(true)
                     if not playedCasinoGuiSound then

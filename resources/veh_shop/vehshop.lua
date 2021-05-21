@@ -22,7 +22,7 @@ local ownerMenu = false
 
 local vehshopDefault = {
 	opened = false,
-	title = "Vehicle Shop",
+	title = "Concessionária",
 	currentmenu = "main",
 	lastmenu = nil,
 	currentpos = nil,
@@ -39,7 +39,7 @@ local vehshopDefault = {
 		scale = 0.29,
 		font = 0,
 		["main"] = {
-			title = "CATEGORIES",
+			title = "Categorias",
 			name = "main",
 			buttons = {
 				{name = "Vehicles", description = ""},
@@ -47,14 +47,14 @@ local vehshopDefault = {
 			}
 		},
 		["vehicles"] = {
-			title = "VEHICLES",
+			title = "Veículos",
 			name = "vehicles",
 			buttons = {
 				{name = "Job Vehicles", description = ''},
 			}
 		},
 		["jobvehicles"] = {
-			title = "job vehicles",
+			title = "Utilitários",
 			name = "job vehicles",
 			buttons = {
 				{name = "Taxi Cab", costs = 4000, description = {}, model = "taxi"},
@@ -64,7 +64,7 @@ local vehshopDefault = {
 			}
 		},
 		["cycles"] = {
-			title = "cycles",
+			title = "Bicicletas",
 			name = "cycles",
 			buttons = {
 				{name = "BMX", costs = 150, description = {}, model = "bmx"},
@@ -625,7 +625,7 @@ end)
 RegisterCommand('finance', function()
 TriggerEvent('finance')
 end)
-	
+
 
 RegisterNetEvent("finance")
 AddEventHandler("finance", function()

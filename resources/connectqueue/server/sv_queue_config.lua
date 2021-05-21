@@ -45,13 +45,13 @@ Config.ShowTemp = false
 
 -- simple localization
 Config.Language = {
-    joining = "\xF0\x9F\x8E\x89Joining...",
-    connecting = "\xE2\x8F\xB3Connecting...",
-    idrr = "\xE2\x9D\x97[Queue] Error: Couldn't retrieve any of your id's, try restarting.",
-    err = "\xE2\x9D\x97[Queue] There was an error",
-    pos = "\xF0\x9F\x90\x8CYou are %d/%d in queue \xF0\x9F\x95\x9C%s",
-    connectingerr = "\xE2\x9D\x97[Queue] Error: Error adding you to connecting list",
-    timedout = "\xE2\x9D\x97[Queue] Error: Timed out?",
-    wlonly = "\xE2\x9D\x97[Queue] You must be whitelisted to join this server",
-    steam = "\xE2\x9D\x97 [Queue] Error: Steam must be running"
+    joining = "\xF0\x9F\x8E\x89Juntando-se ...",
+    connecting = "\xE2\x8F\xB3Conectando ...",
+    idrr = "\xE2\x9D\x97[Queue] Erro: Não foi possível recuperar nenhum dos seus IDs, tente reiniciar.",
+    err = "\xE2\x9D\x97[Queue] Havia um erro",
+    pos = "\xF0\x9F\x90\x8CYou are %d/%d na fila \xF0\x9F\x95\x9C%s",
+    connectingerr = "\xE2\x9D\x97[Queue] Erro: Erro ao adicioná-lo à lista de conexão",
+    timedout = "\xE2\x9D\x97[Queue] Erro: expirado?",
+    wlonly = "\xE2\x9D\x97[Queue] Você precisar estar na Whitelist para participar deste servidor",
+    steam = "\xE2\x9D\x97 [Queue] Erro: a Steam deve estar aberta"
 }

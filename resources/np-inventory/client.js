@@ -151,7 +151,7 @@ on('player:receiveItem', (id, amount, generateInformation, itemdata, returnData 
 
     let combined = parseFloat(itemList[id].weight) * parseFloat(amount);
     if (parseFloat(personalWeight) > 250 || parseFloat(personalWeight) + combined > 250) {
-        emit('DoLongHudText', 'Failed to give ' + id + ' because you were overweight!', 2);
+        emit('DoLongHudText', 'Falha ao dar ' + id + ' Porque você estava com excesso de peso!', 2);
         //TODO: Drop item on ground?
         return;
     }
@@ -184,7 +184,7 @@ on('inventory-bar', (toggle) => {
 RegisterNetEvent('inventory:removeItem')
 on('inventory:removeItem', (id, amount) => {
 	RemoveItem(id,amount)
-	emit("hud-display-item",id,"Removed", amount)
+	emit("hud-display-item",id,"Removido", amount)
 })
 
 function RemoveItem(id,amount) {
@@ -307,7 +307,7 @@ function findSlot(ItemIdToCheck,amount, nonStacking) {
 	}
 
 	if (foundslot == 0) {
-		emit("DoLongHudText","Failed to give " + ItemIdToCheck + " because you were full!",2)
+		emit("DoLongHudText","Falha ao dar " + ItemIdToCheck + " Porque seu inventário esta cheio!",2)
 	}
 
 	return foundslot;
@@ -348,7 +348,7 @@ on('inventory-open-request', () => {
 	if (isInVehicle) {
 		vehicleFound = GetVehiclePedIsIn(PlayerPedId(),false)
 		let licensePlate = GetVehicleNumberPlateText(vehicleFound);
-		emitNet("server-inventory-open", startPosition, cid, "1", "Glovebox-" + licensePlate);
+		emitNet("server-inventory-open", startPosition, cid, "1", "Porta-luvas-" + licensePlate);
 	} else if (tacoShopDst < 2.0) {
 		TriggerEvent("server-inventory-open", "18", "Craft");
 	} else if (JailBinFound && jailDst < 80.0) {
@@ -393,7 +393,7 @@ on('inventory-open-request', () => {
 					if (GetEntityModel(vehicleFound) == GetHashKey('taco')) {
 						TriggerEvent("server-inventory-open", "18", "Craft");
 					} else {
-						emitNet("server-inventory-open", startPosition, cid, "1", "Trunk-" + licensePlate);
+						emitNet("server-inventory-open", startPosition, cid, "1", "Porta-malas-" + licensePlate);
 					}
 				}
 			}

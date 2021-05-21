@@ -1719,7 +1719,7 @@ function searchUpdate() {
 
 function ErrorCheck(startingInventory, inventoryDropName, movementWeight) {
     let sameInventory = true;
-    let ErrorReason = 'Success';
+    let ErrorReason = 'Sucesso';
 
     if (inventoryDropName == 'wrapsecondary' && startingInventory == 1) {
         sameInventory = false;
@@ -2144,21 +2144,21 @@ function AttemptDropInFilledSlot(slot) {
         let [craftCheck, weightCheck] = CheckCraftFail(itemidsent, moveAmount);
 
         if (!craftCheck && !weightCheck && currentInventory == 2 && inventoryDropName == 'wrapmain') {
-            InventoryLog('Attempted to craft item with itemid: ' + itemidsent);
+            InventoryLog('Tentou crafitar com o itemID:' + itemidsent);
             crafting = true;
-            result = 'Success';
-            result2 = 'Success';
+            result = 'Sucesso';
+            result2 = 'Sucesso';
         } else {
             if (craftCheck) {
-                result = 'You dont have the required materials!';
+                result = 'Você não tem os materiais necessários!';
             }
             if (weightCheck) {
-                result2 = 'The personal weight is too much.';
+                result2 = 'Você não tem espaço suficiente no inventário.';
                 $('.weightcontainer').eq(0).shake();
             }
 
             EndDragError(slot);
-            InventoryLog('Error: ' + result + ' | ' + result2);
+            InventoryLog('Erro: ' + result + ' | ' + result2);
             return;
         }
     } else {
@@ -2169,7 +2169,7 @@ function AttemptDropInFilledSlot(slot) {
             result = ErrorCheck(currentInventory, inventoryDropName, movementWeight - movementReturnItemWeight);
         } else {
             // the item was stacked so its automatically successful for return item weight.
-            result2 = 'Success';
+            result2 = 'Sucesso';
             result = ErrorCheck(currentInventory, inventoryDropName, movementWeight);
         }
     }
@@ -2194,7 +2194,7 @@ function AttemptDropInFilledSlot(slot) {
         result = 'You can not drop items into the craft table!';
     }
 
-    if (result == 'Success' && result2 == 'Success') {
+    if (result == 'Sucesso' && result2 == 'Sucesso') {
         // Here we are moving from player inventory to the secondary inventory
         if (currentInventory == 1 && inventoryDropName == 'wrapsecondary') {
             item.dataset.inventory = 2;
@@ -2530,7 +2530,7 @@ function AttemptDropInEmptySlot(slot, isDropped, half) {
         movementWeight = weight * alteredAmount;
     }
 
-    let result = 'Success';
+    let result = 'Sucesso';
     if (inventoryDropName === 'wrapmain' && inventoryReturnItemDropName === 'craftContainer' && TargetInventoryName == 'Craft') {
         // InventoryLog("eh: Crafting")
         inventoryReturnItemDropName = 'wrapsecondary';
@@ -2538,21 +2538,21 @@ function AttemptDropInEmptySlot(slot, isDropped, half) {
         let [craftCheck, weightCheck] = CheckCraftFail(itemidsent, moveAmount);
 
         if (!craftCheck && !weightCheck && Number(currentInventory) === 2 && inventoryDropName === 'wrapmain') {
-            InventoryLog('Attempted to craft item with itemid: ' + itemidsent);
+            InventoryLog('Tentou crafitar itens com itemid: ' + itemidsent);
             crafting = true;
-            result = 'Success';
+            result = 'Sucesso';
         } else {
-            let result2 = 'Success';
+            let result2 = 'Sucesso';
             if (craftCheck) {
-                result = 'You dont have the required materials!';
+                result = 'Você não tem os materiais necessários!';
             }
             if (weightCheck) {
-                result2 = 'The personal weight is too much.';
+                result2 = 'Você não possue espaço em seu inventário';
                 $('.weightcontainer').eq(0).shake();
             }
 
             EndDragError(slot);
-            InventoryLog('Error: ' + result + ' | ' + result2);
+            InventoryLog('Erro: ' + result + ' | ' + result2);
             return;
         }
     } else {
@@ -2567,7 +2567,7 @@ function AttemptDropInEmptySlot(slot, isDropped, half) {
         (inventoryDropName == 'wrapsecondary' && TargetInventoryName == 'Shop') ||
         (inventoryDropName == 'wrapsecondary' && !StoreOwner && PlayerStore)
     ) {
-        result = 'You can not drop items into the shop!';
+        result = 'Você não pode soltar itens na loja!';
     }
     if (inventoryDropName === 'wrapsecondary' && TargetInventoryName === 'Craft') {
         result = 'You can not drop items into the craft shop!';
@@ -2576,33 +2576,33 @@ function AttemptDropInEmptySlot(slot, isDropped, half) {
     if (inventoryDropName == 'wrapsecondary' && PlayerStore) {
         let isWeapon = itemList[itemidsent].weapon;
         if (isWeapon != undefined) {
-            result = 'You can not move weapons while in player stores!';
+            result = 'Você não pode mover armas enquanto estiver em lojas!';
         }
     }
 
-    if (result == 'Success') {
+    if (result == 'Sucesso') {
         let purchaseCost = parseInt(item.dataset.fwewef) * parseInt(moveAmount);
         //InventoryLog(item.dataset.fwewef + " | " + purchaseCost + " | " + moveAmount);
         if (TargetInventoryName == 'Shop' || (!StoreOwner && PlayerStore)) {
             //InventoryLog("eh: PURCHASE")
             if (purchaseCost > userCash) {
-                result = 'You cant afford that, bitch!';
+                result = 'Você não pode pagar isso!';
                 EndDragError(slot);
-                InventoryLog('Error: ' + result);
+                InventoryLog('Erro: ' + result);
                 //userCash = userCash - purchaseCost; unsure why we are taking money on not enough money taken
                 return;
             } else {
                 if (itemList[itemidsent].weapon && inventoryReturnItemDropName !== inventoryDropName) {
                     if (!exluded[itemidsent] && !userWeaponLicense) {
-                        result = 'You do not have a license.!';
-                        InventoryLog('Error: ' + result);
+                        result = 'Você não tem porte de armas!'
+                        InventoryLog('Erro: ' + result);
                         EndDragError(slot);
                         return;
                     }
 
                     if (!exluded[itemidsent] && brought && !isCop) {
-                        result = 'You can only buy one gun a day!';
-                        InventoryLog('Error: ' + result);
+                        result = 'Você só pode comprar uma arma por dia!';
+                        InventoryLog('Erro: ' + result);
                         EndDragError(slot);
                         return;
                     }

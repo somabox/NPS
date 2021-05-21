@@ -45,7 +45,7 @@ AddEventHandler("np-dirtymoney:attemptDirtyMoneyDrops", function()
 		--TriggerServerEvent('mobdelivery:checkjob')
 		--TriggerServerEvent("np-dirtymoney:alterDirtyMoney", "TurnToCash", 0)
 	else
-		local msgtoplayer = "You must wait " .. DropOffTime .. " Seconds to drop off your cash.."
+		local msgtoplayer = "Você deve esperar " .. DropOffTime .. " Segundos para desistir do seu dinheiro .."
 		TriggerEvent("DoLongHudText", msgtoplayer)
 	end
 
