@@ -70,7 +70,7 @@ Citizen.CreateThread(function()
 					if nextStop2 == 2 then
 						maxSpeed2 = 45.0
 					else
-						maxSpeed2 = 100.0
+						maxSpeed2 = 50.0
 					end
 				end
 
@@ -134,7 +134,7 @@ Citizen.CreateThread(function()
 		  		
 
 		        if veh then
-		        	local deleteAfterPoint = 50
+		        	local deleteAfterPoint = 100
 		        	isForcedStopped = true
 		        	while true do
 		        		Citizen.Wait(1000)
@@ -421,23 +421,23 @@ AddEventHandler("AskForTrainConfirmed", function()
 
 	if metroDist < countryDist then
 		if metroDist < 25.0 then 
-			local finished = exports["np-taskbar"]:taskBar(60000,"Waiting for Train",false,true)	
+			local finished = exports["np-taskbar"]:taskBar(60000,"Esperando o metrô...",false,true)	
 			if finished == 100 then
 				StartMetro(closestMetro)
-				TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' Choo Choo..')
+				--TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 0, 0 }, ' Choo Choo..')
 			end
 		else
-			TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' You are not near a train station..')
+			TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 0, 0 }, ' Você não está perto de estação de metrô.')
 		end
 	else
 		if countryDist < 25.0 then 
-			local finished = exports["np-taskbar"]:taskBar(60000,"Waiting for Train",false,true)	
+			local finished = exports["np-taskbar"]:taskBar(60000,"Esperando o metrô...",false,true)	
 			if finished == 100 then			
 				StartCountry(closestCountry)
-				TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' Choo Choo..')
+				--TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 0, 0 }, ' Choo Choo..')
 			end
 		else
-			TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' You are not near a train station..')
+			TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 0, 0 }, ' Você não está perto de uma estação de metrô.')
 		end
 	end
 end)
@@ -509,7 +509,7 @@ AddEventHandler('Trains:ToggleTainsBlip', function()
 			SetBlipScale(item.blip, 0.75)
 			SetBlipAsShortRange(item.blip, true)
 			BeginTextCommandSetBlipName("STRING")
-			AddTextComponentString("Metro Train Station")
+			AddTextComponentString("Estação do metrô")
 			EndTextCommandSetBlipName(item.blip)
         end
     end
@@ -526,7 +526,7 @@ AddEventHandler('Trains:ToggleTainsBlip', function()
 			SetBlipScale(item.blip, 0.75)
 			SetBlipAsShortRange(item.blip, true)
 			BeginTextCommandSetBlipName("STRING")
-			AddTextComponentString("Country Train Station")
+			AddTextComponentString("Estação de trem")
 			EndTextCommandSetBlipName(item.blip)
         end
     end
@@ -545,7 +545,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if(IsControlJustReleased(1,  38))then
+		if(IsControlJustReleased(1,  49))then
 
 			playerped = PlayerPedId()
 			targetVehicle = getVehicleInDirection()
@@ -578,9 +578,9 @@ Citizen.CreateThread(function()
 
 				if IsPedInAnyTrain(playerped) then
 					intrain = true
-					TriggerEvent("DoLongHudText","You boarded the train!",1)
+					TriggerEvent("DoLongHudText","Você embarcou no metrô!",1)
 				else
-					TriggerEvent("DoLongHudText","Sorry, this carriage is full!",2)
+					TriggerEvent("DoLongHudText","Desculpe, o metrô está cheio!",2)
 				end
 				Citizen.Wait(1500)
 				justborded = false
@@ -656,7 +656,7 @@ function StartMetro(coords)
 
 
 
-	TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' Train will depart in 30 seconds.')
+	TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 250, 250 }, ' O metrô partirá em 30 segundos.')
 
 	Citizen.Wait(30000)
 
@@ -709,7 +709,7 @@ function StartCountry(coords)
 
 
 
-	TriggerEvent('chatMessage', 'THOMAS:', { 0, 0, 0 }, ' Train will depart in 30 seconds.')
+	TriggerEvent('chatMessage', 'METRO INFORMA:', { 0, 250, 250 }, ' O trem partirá em 30 segundos.')
 
 	Citizen.Wait(30000)
 

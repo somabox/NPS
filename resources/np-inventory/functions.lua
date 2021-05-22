@@ -340,7 +340,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "vodka" or itemid == "beer" or itemid == "whiskey") then
-        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Drink","changethirst",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Bebendo...","changethirst",true,itemid,playerVeh)
         TriggerEvent("Evidence:StateSet", 8, 600)
         local alcoholStrength = 0.5
         if itemid == "vodka" or itemid == "whiskey" then alcoholStrength = 1.0 end
@@ -348,31 +348,31 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "coffee") then
-        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Drink","coffee:drink",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Bebendo...","coffee:drink",true,itemid,playerVeh)
     end
 
     if (itemid == "fishtaco") then
-        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","food:FishTaco",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","food:FishTaco",true,itemid,playerVeh)
     end
 
     if (itemid == "taco" or itemid == "burrito") then
-        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","food:Taco",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","food:Taco",true,itemid,playerVeh)
     end
 
     if (itemid == "churro" or itemid == "hotdog") then
-        TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","food:Condiment",true,itemid,playerVeh)
+        TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","food:Condiment",true,itemid,playerVeh)
     end
 
     if (itemid == "greencow") then
-        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Drink","food:Condiment",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Bebendo...","food:Condiment",true,itemid,playerVeh)
     end
 
     if (itemid == "donut" or itemid == "eggsbacon") then
-        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","food:Condiment",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","food:Condiment",true,itemid,playerVeh)
     end
 
     if (itemid == "icecream" or itemid == "mshake") then
-        TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","food:IceCream",true,itemid,playerVeh)
+        TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","food:IceCream",true,itemid,playerVeh)
     end
 
 
@@ -425,7 +425,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
 
 
     if (itemid == "usbdevice") then
-        local finished = exports["np-taskbar"]:taskBar(15000,"Scanning For Networks",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(15000,"Procurando por redes",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("hacking:attemptHack")
         end
@@ -434,12 +434,12 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
 
     if (itemid == "weed12oz") then
         TriggerServerEvent("exploiter", "Someone ate a box with 12oz of weed for no reason / removing item in unintended way")
-        TriggerEvent("inv:weedPacking") -- cannot find the end of this call anywhere
+        TriggerEvent("inv:weedPacking") -- Não é possível encontrar o final desta chamada em qualquer lugar
         remove = true
     end
 
     if (itemid == "heavyammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",1788949567,50,true)
             remove = true
@@ -447,7 +447,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "pistolammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",1950175060,50,true)
             remove = true
@@ -455,7 +455,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "snowballammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo", `AMMO_SNOWBALL_2`, 50, true)
             remove = true
@@ -463,7 +463,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "rifleammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",218444191,50,true)
             remove = true
@@ -471,7 +471,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     -- if (itemid == "sniperammo") then
-    --     local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+    --     local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
     --     if (finished == 100) then
     --         TriggerEvent("actionbar:ammo",1285032059,5,true)
     --         remove = true
@@ -479,7 +479,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     -- end
 
     if (itemid == "shotgunammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",-1878508229,50,true)
             remove = true
@@ -487,7 +487,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     end
 
     if (itemid == "subammo") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",1820140472,50,true)
             remove = true
@@ -496,7 +496,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
 
 
     if (itemid == "nails") then
-        local finished = exports["np-taskbar"]:taskBar(5000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(5000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",965225813,50,true)
             remove = true
@@ -505,7 +505,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
     
 
     if (itemid == "taserammo") then
-        local finished = exports["np-taskbar"]:taskBar(2000,"Reloading",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(2000,"Recarregando...",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("actionbar:ammo",-1575030772,3,true)
             remove = true
@@ -514,7 +514,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
 
 
     if (itemid == "armor") then
-        local finished = exports["np-taskbar"]:taskBar(10000,"Armor",true,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(10000,"Usando colete...",true,false,playerVeh)
         if (finished == 100) then
             SetPlayerMaxArmour(PlayerId(), 60 )
             SetPedArmour( player, 60 )
@@ -526,7 +526,7 @@ AddEventHandler('RunUseItem', function(itemid, slot, inventoryName, isWeapon)
 
     if (itemid == "cbrownie" or itemid == "cgummies") then
         TriggerEvent("animation:PlayAnimation","pill")
-        local finished = exports["np-taskbar"]:taskBar(3000,"Consuming edibles 😉",false,false,playerVeh)
+        local finished = exports["np-taskbar"]:taskBar(3000,"Huuummmmm 😉",false,false,playerVeh)
         if (finished == 100) then
             TriggerEvent("Evidence:StateSet",3,1200)
             TriggerEvent("Evidence:StateSet",7,1200)
@@ -862,20 +862,20 @@ end
     end
 
     if (itemid == "sandwich" or itemid == "hamburger") then
-        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","changehunger",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","changehunger",true,itemid,playerVeh)
     end
 
     if (itemid == "cola" or itemid == "water") then
         --attachPropsToAnimation(itemid, 6000)
-        --TaskItem("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Drink","changethirst",true,itemid)
-        AttachPropAndPlayAnimation("amb@world_human_drinking@beer@female@idle_a", "idle_e", 49,6000,"Drink","changethirst",true,itemid,playerVeh)
+        --TaskItem("amb@world_human_drinking@coffee@male@idle_a", "idle_c", 49,6000,"Bebendo...","changethirst",true,itemid)
+        AttachPropAndPlayAnimation("amb@world_human_drinking@beer@female@idle_a", "idle_e", 49,6000,"Bebendo...","changethirst",true,itemid,playerVeh)
     end
 
 
     if (itemid == "jailfood" or itemid == "bleederburger" or itemid == "heartstopper" or itemid == "torpedo" or itemid == "meatfree" or itemid == "moneyshot" or itemid == "fries") then
-        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Eating","inv:wellfed",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("mp_player_inteat@burger", "mp_player_int_eat_burger", 49,6000,"Comendo...","inv:wellfed",true,itemid,playerVeh)
         --attachPropsToAnimation(itemid, 6000)
-        --TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49, 6000, "Eating", "inv:wellfed", true,itemid)
+        --TaskItem("mp_player_inteat@burger", "mp_player_int_eat_burger", 49, 6000, "Comendo...", "inv:wellfed", true,itemid)
     end
 
     if (itemid == "methbag") then
@@ -890,7 +890,7 @@ end
     if itemid == "slushy" then
         --attachPropsToAnimation(itemid, 6000)
         TriggerEvent("healed:useOxy")
-        AttachPropAndPlayAnimation("amb@world_human_drinking@beer@female@idle_a", "idle_e", 49, 6000,"Eating", "inv:wellfed",true,itemid,playerVeh)
+        AttachPropAndPlayAnimation("amb@world_human_drinking@beer@female@idle_a", "idle_e", 49, 6000,"Comendo...", "inv:wellfed",true,itemid,playerVeh)
     end
 
     if (itemid == "shitlockpick") then

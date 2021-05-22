@@ -122,7 +122,7 @@ on("__cfx_nui:GiveItem", (data, cb) => {
 	let nonStacking = data[4]
 	let itemdata = data[5]
 
-	emit("hud-display-item",id,"Received",amount)
+	emit("hud-display-item",id,"Recebido",amount)
 	GiveItem(id, amount, generateInformation,nonStacking, itemdata)	
 })
 

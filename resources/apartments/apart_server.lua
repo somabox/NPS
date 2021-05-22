@@ -168,7 +168,7 @@ AddEventHandler('house:enterhouse', function(house_id,house_model,bool)
             TriggerClientEvent('UpdateCurrentHouseSpawns', src, house_id, result[1].data)
             TriggerClientEvent('house:entersuccess', src, house_id, house_model, json.decode(result[1].furniture))
         else
-            TriggerClientEvent('DoLongHudText', src, "You dont have a key for that house", 2)
+            TriggerClientEvent('DoLongHudText', src, "Você não tem uma chave para essa casa", 2)
             print('you dont have a house BUDDY')
         end
         for i = 1,#keys do

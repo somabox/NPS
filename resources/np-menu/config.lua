@@ -15,7 +15,7 @@ local cuffStates = {}
 rootMenuConfig =  {
     {
         id = "general",
-        displayName = "General",
+        displayName = "Geral",
         icon = "#globe-europe",
         enableMenu = function()
             return not isDead
@@ -24,7 +24,7 @@ rootMenuConfig =  {
     },
     {
         id = "police-action",
-        displayName = "Police Actions",
+        displayName = "Ações Policia",
         icon = "#police-action",
         enableMenu = function()
             return (isPolice and not isDead)
@@ -33,7 +33,7 @@ rootMenuConfig =  {
     },
     {
         id = "police-check",
-        displayName = "Police Checks",
+        displayName = "Consultas Policia",
         icon = "#police-check",
         enableMenu = function()
             return (isPolice and not isDead)
@@ -42,7 +42,7 @@ rootMenuConfig =  {
     },
     {
         id = "police-vehicle",
-        displayName = "Police Vehicle",
+        displayName = "Veículos polícia",
         icon = "#police-vehicle",
         enableMenu = function()
             return (isPolice and not isDead and IsPedInAnyVehicle(PlayerPedId(), false))
@@ -96,7 +96,7 @@ rootMenuConfig =  {
     },
     {
         id = "animations",
-        displayName = "Gait",
+        displayName = "Andar",
         icon = "#walking",
         enableMenu = function()
             return not isDead
@@ -108,7 +108,7 @@ rootMenuConfig =  {
     },
     {
         id = "expressions",
-        displayName = "Expressions",
+        displayName = "Expressões",
         icon = "#expressions",
         enableMenu = function()
             return not isDead
@@ -126,7 +126,7 @@ rootMenuConfig =  {
     },
     {
         id = "drivinginstructor",
-        displayName = "Driving Instructor",
+        displayName = "Instrutor de condução",
         icon = "#drivinginstructor",
         enableMenu = function()
             return (not isDead and isInstructorMode)
@@ -171,7 +171,7 @@ rootMenuConfig =  {
     },
     {
         id = "cuff",
-        displayName = "Cuff Actions",
+        displayName = "Ações Apreensão",
         icon = "#cuffs",
         enableMenu = function()
             return (not isDead and not isHandcuffed and not isHandcuffedAndWalking and (exports["np-inventory"]:hasEnoughOfItem("cuffs",1,false) or isPolice))
@@ -216,7 +216,7 @@ rootMenuConfig =  {
     },
     {
         id = "vehicle",
-        displayName = "Vehicle",
+        displayName = "Veículo",
         icon = "#vehicle-options-vehicle",
         functionName = "veh:options",
         enableMenu = function()
@@ -224,7 +224,7 @@ rootMenuConfig =  {
         end
     },{
         id = "train",
-        displayName = "Request Train",
+        displayName = "Solicitar metrô",
         icon = "#general-ask-for-train",
         functionName = "AskForTrain",
         enableMenu = function()
@@ -297,28 +297,28 @@ newSubMenus = {
         functionName = "emotes:OpenMenu"
     },    
     ['general:keysgive'] = {
-        title = "Give Key",
+        title = "Dar chaves ",
         icon = "#general-keys-give",
         functionName = "keys:give"
     },
     ['general:apartgivekey'] = {
-        title = "Give Key",
+        title = "Dar chaves apto.",
         icon = "#general-apart-givekey",
         functionName = "apart:giveKey"
     },
     ['general:askfortrain'] = {
-        title = "Request Train",
+        title = "Solicitar trem",
         icon = "#general-ask-for-train",
         functionName = "AskForTrain",
-        -- enableMenu = function()
-        --     for _,d in ipairs(trainstations) do
-        --         if #(vector3(d[1],d[2],d[3]) - GetEntityCoords(PlayerPedId())) < 25 then
-        --             return true
-        --         else
-        --             return false
-        --         end
-        --     end
-        -- end
+         enableMenu = function()
+             for _,d in ipairs(trainstations) do
+                 if #(vector3(d[1],d[2],d[3]) - GetEntityCoords(PlayerPedId())) < 25 then
+                     return true
+                 else
+                     return false
+                 end
+             end
+         end
     },
     ['general:checkoverself'] = {
         title = "Examine Self",
@@ -612,52 +612,52 @@ newSubMenus = {
     },
 
     ['k9:spawn'] = {
-        title = "Summon",
+        title = "Chamar K9",
         icon = "#k9-spawn",
         functionName = "K9:Create"
     },
     ['k9:delete'] = {
-        title = "Dismiss",
+        title = "Dispensar",
         icon = "#k9-dismiss",
         functionName = "K9:Delete"
     },
     ['k9:follow'] = {
-        title = "Follow",
+        title = "Seguir",
         icon = "#k9-follow",
         functionName = "K9:Follow"
     },
     ['k9:vehicle'] = {
-        title = "Get in/out",
+        title = "Entrar/Sair VTR",
         icon = "#k9-vehicle",
         functionName = "K9:Vehicle"
     },
     ['k9:sit'] = {
-        title = "Sit",
+        title = "Sentar",
         icon = "#k9-sit",
         functionName = "K9:Sit"
     },
     ['k9:lay'] = {
-        title = "Lay",
+        title = "Deitar",
         icon = "#k9-lay",
         functionName = "K9:Lay"
     },
     ['k9:stand'] = {
-        title = "Stand",
+        title = "Seguir",
         icon = "#k9-stand",
         functionName = "K9:Stand"
     },
     ['k9:sniff'] = {
-        title = "Sniff Person",
+        title = "Farejar cidadão",
         icon = "#k9-sniff",
         functionName = "K9:Sniff"
     },
     ['k9:sniffvehicle'] = {
-        title = "Sniff Vehicle",
+        title = "Farejar veículo",
         icon = "#k9-sniff-vehicle",
         functionName = "sniffVehicle"
     },
     ['k9:huntfind'] = {
-        title = "Hunt nearest",
+        title = "Caçar",
         icon = "#k9-huntfind",
         functionName = "K9:Huntfind"
     },

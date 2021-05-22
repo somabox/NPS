@@ -178,7 +178,7 @@ AddEventHandler("K9:Delete", function()
 	current_dog = 0
 	SetEntityAsMissionEntity(ldog,false,true)
 	DeleteEntity(ldog)
-	TriggerEvent("DoLongHudText","K9: Now out of service")
+	TriggerEvent("DoLongHudText","K9: Agora está fora de serviço")
 	
 end)
 
@@ -614,7 +614,7 @@ Citizen.CreateThread(function()
 					hunting = false
 					attacking = false
 					following = false
-					TriggerEvent("DoLongHudText","K9: The dog smells something very close..")			
+					TriggerEvent("DoLongHudText","K9: O cachorro fareja algo muito perto ..")			
 				else
 					if distancecheck > 120 and imDead == 0  then
 						hunting = false

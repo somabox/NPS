@@ -127,7 +127,7 @@ itemList["rifleammo"]	= {fullyDegrades: true, decayrate: 1.0, displayname: "Rifl
 
 // custom items with decay
 
-itemList["tuner"]	    = {fullyDegrades: true, decayrate: 2.0, displayname: "Tuner Chip",       craft: [ {itemid: "electronics", amount: 100 } ], price: 500, weight: 0,   nonStack: false, model: "", image: "np_tuner.png", information: "Use inside a tuner vehicle to tune it..", deg: false}
+itemList["tuner"]	    = {fullyDegrades: true, decayrate: 2.0, displayname: "Chip de Tunagem",       craft: [ {itemid: "electronics", amount: 100 } ], price: 500, weight: 0,   nonStack: false, model: "", image: "np_tuner.png", information: "Use dentro de um veículo tunável para usá-lo..", deg: false}
 
 itemList["repairkit"]	= {fullyDegrades: true, decayrate: 0.25, displayname: "Repair Kit", craft: [{itemid: "electronics", amount: 25 }], price: 400, weight: 1, nonStack: false, model: "", image: "np_basic_repair-kit.png" , deg: false}
 
@@ -160,14 +160,14 @@ itemList["weedoz"]	    = {fullyDegrades: true, illegal: true, decayrate: 0.3, di
 itemList["weedq"]	    = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Maconha (pacote)", craft: [{itemid: "weedoz", amount: 0.25 }], price: 65, weight: 2, nonStack: false, model: "", image: "np_weed-oz.png", information: "Pacote de maconha desidratada pronta para ser dichavada. <br> <b> Use para bolar baseado.</b>" , deg: false}
 
 
-itemList["wetbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Wet Bud (2 Grams)", price: 30, weight: 5, nonStack: false, model: "", image: "wet.png", information: "Dry It?" , deg: false}
+itemList["wetbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Cannabis umida", price: 30, weight: 5, nonStack: false, model: "", image: "wet.png", information: "Uma cannabis que acabou de ser colhida e ainda está umida." , deg: false}
 
-itemList["driedbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Dried Bud (2 Grams)", price: 30, weight: 2, nonStack: false, model: "", image: "buddry2.png", information: "Dry It?" , deg: false}
+itemList["driedbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Cannabis seca", price: 30, weight: 2, nonStack: false, model: "", image: "buddry2.png", information: "Uma cannabis que estava umida e agora esta seca." , deg: false}
 
-itemList["smallbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Packed Bud (2 Grams)", price: 30, weight: 2, nonStack: false, model: "", image: "buddry.png", information: "Sell It?" , deg: false}
+itemList["smallbud"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, displayname: "Cannabis pronta", price: 30, weight: 2, nonStack: false, model: "", image: "buddry.png", information: "Uma cannabis que está pronta para o consumo." , deg: false}
 
 
-itemList["joint2"]	    = {fullyDegrades: true, illegal: true, decayrate: 0.75, displayname: "2g Joint", craft: [ {itemid: "smallbud", amount: 1.0 }, {itemid: "rollingpaper", amount: 1 } ], price: 20, weight: 0,   nonStack: false, model: "", image: "np_joint.png", information: "Its a Joint, man. ", deg: false}
+itemList["joint2"]	    = {fullyDegrades: true, illegal: true, decayrate: 0.75, displayname: "Baseadão", craft: [ {itemid: "smallbud", amount: 1.0 }, {itemid: "rollingpaper", amount: 1 } ], price: 20, weight: 0,   nonStack: false, model: "", image: "np_joint.png", information: "Um baseado, também conhecido no Brasil como beque, fino ou ainda, banza, e ganja. <br> <b>É um cigarro de maconha (Cannabis) já bolado. </b> ", deg: false}
 
 
 
@@ -177,50 +177,50 @@ itemList["badlsdtab"] = {fullyDegrades: true, illegal: true, decayrate: 0.3, dis
 
 // other drugy shit
 
-itemList["aspirin"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Aspirin", price: 150, weight: 0, nonStack: false, model:  "", image: "np_aspirin.png", information: "Its an Aspirin", deg: false}
+itemList["aspirin"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Aspirina", price: 150, weight: 0, nonStack: false, model:  "", image: "np_aspirin.png", information: "É uma aspirina", deg: false}
 
-itemList["cabsinthe"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Cannabis Absinthe", price: 1, weight: 0, nonStack: false, model: "", image: "np_cannabis-absinthe.png", information: "Duuude..bro...", deg: false }
+itemList["cabsinthe"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Absinto de cannabis", price: 1, weight: 0, nonStack: false, model: "", image: "np_cannabis-absinthe.png", information: "O absinto é uma bebida destilada a base de anis e outras ervas, como losna e funcho. <br> <b>Nesse caso é de Cannabis.</b>", deg: false }
 
-itemList["redwine"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Red Wine", price: 1, weight: 0, nonStack: false, model:  "", image: "np_red-wine-bottle.png", information: "No crime just wine", deg: false }
-itemList["rum"]	        = {fullyDegrades: false, decayrate: 0.0, displayname: "Rum", price: 1, weight: 0, nonStack: false, model:  "", image: "np_rum.png", information: "Why is it gone?", deg: false }
-itemList["tequila"] = {fullyDegrades: false,  decayrate: 0.0, displayname: "Tequila", price: 1, weight: 0, nonStack: false, model: "", image: "np_tequila.png", information: "Tequilya brand", deg: false }
-itemList["tequilashot"] = {fullyDegrades: false,  decayrate: 0.0, displayname: "Shot of Tequila", price: 1, weight: 0, nonStack: false, model: "", image: "np_tequila-shot.png", information: "Uno mas por favor", deg: false }
-itemList["vodka"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Vodka", price: 25, weight: 1, nonStack: false, model: "", image: "np_vodka.png", information: "Sates Thirst" , deg: false}
+itemList["redwine"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Vinho tinto", price: 1, weight: 0, nonStack: false, model:  "", image: "np_red-wine-bottle.png", information: "Nenhum crime apenas vinho", deg: false }
+itemList["rum"]	        = {fullyDegrades: false, decayrate: 0.0, displayname: "Rum", price: 1, weight: 0, nonStack: false, model:  "", image: "np_rum.png", information: "Rum é uma bebida alcoólica obtida a partir da fermentação alcoólica do melaço e de outros derivados da produção de açúcar e posterior destilação.", deg: false }
+itemList["tequila"] = {fullyDegrades: false,  decayrate: 0.0, displayname: "Tequila", price: 1, weight: 0, nonStack: false, model: "", image: "np_tequila.png", information: "Tequila é uma bebida alcoólica destilada feita da agave-azul.", deg: false }
+itemList["tequilashot"] = {fullyDegrades: false,  decayrate: 0.0, displayname: "Shot de Tequila", price: 1, weight: 0, nonStack: false, model: "", image: "np_tequila-shot.png", information: "Uno mas por favor...", deg: false }
+itemList["vodka"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Vodca", price: 25, weight: 1, nonStack: false, model: "", image: "np_vodka.png", information: "Vodca ou vodka (em russo: водка;em polonês/polaco: wódka) é uma popular bebida destilada, incolor, quase sem sabor e com um teor alcoólico entre 35 e 60%." , deg: false}
 
-itemList["whiskey"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Whiskey", price: 25, weight: 1, nonStack: false, model: "", image: "np_whiskey.png", information: "Sates Thirst" , deg: false}
+itemList["whiskey"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Uísque", price: 25, weight: 1, nonStack: false, model: "", image: "np_whiskey.png", information: "Uísque é uma bebida alcoólica destilada de grãos, muitas vezes incluindo malte, que foi envelhecida em barris." , deg: false}
 
-itemList["420bar"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "420 Bar", price: 1, weight: 0, nonStack: false, model: "", image: "np_420-bar.png", information: "Duuuude brah...", deg: false }
-itemList["69box"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "69 Cigar Box", price: 1, weight: 0, nonStack: false, model: "", image: "np_69-cigar-box.png", information: "A taste of Cuba", deg: false }
-itemList["69pack"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "69 Brand Pack", price: 1, weight: 0, nonStack: false, model: "", image: "np_69-brand-pack.png", information: "Just one more", deg: false }
+itemList["420bar"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "Barra 420", price: 1, weight: 0, nonStack: false, model: "", image: "np_420-bar.png", information: "Uma barrinha que aparentemente deve ser comida as 4:20...", deg: false }
+itemList["69box"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "Caixa de Cigarros", price: 1, weight: 0, nonStack: false, model: "", image: "np_69-cigar-box.png", information: "Um gosto de cuba", deg: false }
+itemList["69pack"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "Maço de Cigarros", price: 1, weight: 0, nonStack: false, model: "", image: "np_69-brand-pack.png", information: "Apenas mais um", deg: false }
 
-itemList["champagne"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Champagne", price: 1, weight: 0, nonStack: false, model: "", image: "np_champagne.png", information: "Time to celebrate", deg: false }
+itemList["champagne"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Champagne", price: 1, weight: 0, nonStack: false, model: "", image: "np_champagne.png", information: "Hora de celebrar", deg: false }
 
-itemList["cgummies"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Cannabis Gummies", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cannabis-gummies.png", information: "Duuude...", deg: false }
+itemList["cgummies"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Gomas de Cannabis", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cannabis-gummies.png", information: "Balas adocicadas feitas de Cannabis.", deg: false }
 
-itemList["chloroform"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Chloroform", price: 1, weight: 0, nonStack: false, model: "", image: "np_chloroform.png", information: "Special Cross recipe", deg: false }
-itemList["ibuprofen"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Ibuprofen", price: 150, weight: 0, nonStack: false, model:  "", image: "np_ibuprofen.png", information: "Cures all. Right?" , deg: false}
-itemList["drugx"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Drug X", price: 1, weight: 0, nonStack: false, model:  "", image: "np_drug-x.png", information: "Now in testing by Humane Labs", deg: false }
+itemList["chloroform"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Clorofórmio", price: 1, weight: 0, nonStack: false, model: "", image: "np_chloroform.png", information: "Receita cruzada especial", deg: false }
+itemList["ibuprofen"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Ibuprofen", price: 150, weight: 0, nonStack: false, model:  "", image: "np_ibuprofen.png", information: "Cura tudo, certo?" , deg: false}
+itemList["drugx"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Droga X", price: 1, weight: 0, nonStack: false, model:  "", image: "np_drug-x.png", information: "Agora em testes no Human Labs", deg: false }
 
 
 
 // food
 
-itemList["beer"]    	= {fullyDegrades: false, decayrate: 0.0, displayname: "Beer", price: 10, weight: 1, nonStack: false, model: "", image: "np_beer.png", information: "Sates Thirst" , deg: false}
+itemList["beer"]    	= {fullyDegrades: false, decayrate: 0.0, displayname: "Cerveja", price: 10, weight: 1, nonStack: false, model: "", image: "np_beer.png", information: "A cerveja (do gaulês, através do latim servisia) é uma bebida produzida a partir da fermentação de cereais, principalmente a cevada maltada. " , deg: false}
 
-itemList["bfsandwich"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Breakfast Sandwich", price: 1, weight: 0, nonStack: false, model: "", image: "np_breakfast-sandwich.png", information: "Rise and shine", deg: false }
+itemList["bfsandwich"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Misto-quente", price: 1, weight: 0, nonStack: false, model: "", image: "np_breakfast-sandwich.png", information: "Misto-quente é um sanduíche quente, preparado à base de queijo e presunto (ou fiambre). ", deg: false }
 
-itemList["cbballs"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cluckin Balls", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-balls.png", information: "Ooh..salty. 440Cal", deg: false }
-itemList["cbbucket"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Chicken Bucket", price: 1, weight: 0, nonStack: false, model: "", image: "np_chicken-bucket.png", information: "I like chicken! 2350Cal", deg: false }
-itemList["cbclucker"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Little Clucker", price: 1, weight: 0, nonStack: false, model:  "", image: "np_little-clucker.png", information: "Cluckin toy not included", deg: false }
-itemList["cbdrink"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cluckin Drink", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-drink.png", information: "Hell Cluckin Yeah", deg: false }
-itemList["cbfarmers"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Farmer's Surprise", price: 1, weight: 0, nonStack: false, model:  "", image: "np_farmers-surprise.png", information: "The chewy bits arent harmful", deg: false }
+itemList["cbballs"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cluckin bolas", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-balls.png", information: "Ooh..salgadooo. 440 Calorias", deg: false }
+itemList["cbbucket"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Balde de frango", price: 1, weight: 0, nonStack: false, model: "", image: "np_chicken-bucket.png", information: "Eu amo frango! 2350Cal", deg: false }
+itemList["cbclucker"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Pequeno clucker", price: 1, weight: 0, nonStack: false, model:  "", image: "np_little-clucker.png", information: "Brinquedo de Cluckin não incluído", deg: false }
+itemList["cbdrink"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Bebida de Cluckin", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-drink.png", information: "Inferno cluckin yeah.eah.", deg: false }
+itemList["cbfarmers"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Farmer's Surprise", price: 1, weight: 0, nonStack: false, model:  "", image: "np_farmers-surprise.png", information: "Os bits chewy não são prejudiciais", deg: false }
 itemList["cbfowl"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Fowl Burger", price: 1, weight: 0, nonStack: false, model:  "", image: "np_fowl-burger.png", information: "If you enjoyed it, the chicken didnt die in vain! 900Cal", deg: false }
 itemList["cbfries"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cluckin Fries", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-fries.png", information: "Cluckinsize included. 680Cal", deg: false }
 itemList["cbrings"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cluckin Rings", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cluckin-rings.png", information: "Suffering never tasted so good! 850Cal", deg: false }
-itemList["cbrownie"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "Cannabis Brownie", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cannabis-brownie.png", information: "Dude...", deg: false }
-itemList["cbveggy"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Veggy Salad", price: 1, weight: 0, nonStack: false, model:  "", image: "np_veggy-salad.png", information: "Mystery chewy bits included. 750Cal", deg: false }
+itemList["cbrownie"]	= {fullyDegrades: false, decayrate: 0.0, displayname: "CannaBrownie", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cannabis-brownie.png", information: "Brownie é uma sobremesa de chocolate.  Pode considerar-se um bolo feito num tabuleiro para bolos e partido em pequenos quadrados. <br> <b> Só que neste caso de Cannabis </b>", deg: false }
+itemList["cbveggy"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Salada Vegana.", price: 1, weight: 0, nonStack: false, model:  "", image: "np_veggy-salad.png", information: "Mystery chewy bits included. 750Cal", deg: false }
 
-itemList["cocoab"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "Cocoa Butter", price: 1, weight: 0, nonStack: false, model: "", image: "np_cocoa-butter.png", information: "Hecho en Guatemala", deg: false }
+itemList["cocoab"] 		= {fullyDegrades: false,  decayrate: 0.0, displayname: "Manteiga de cacau", price: 1, weight: 0, nonStack: false, model: "", image: "np_cocoa-butter.png", information: "Feito na Guatemala.", deg: false }
 
 itemList["cookie"]	    = {fullyDegrades: false, decayrate: 0.0, displayname: "Cookie", price: 1, weight: 0, nonStack: false, model:  "", image: "np_cookie.png", information: "Baked with love", deg: false }
 itemList["crabcakes"] 	= {fullyDegrades: false,  decayrate: 0.0, displayname: "Crab Cakes", price: 1, weight: 0, nonStack: false, model: "", image: "np_crab-cakes.png", information: "Scrumptious", deg: false }

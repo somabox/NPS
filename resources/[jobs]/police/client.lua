@@ -2940,9 +2940,9 @@ AddEventHandler("K9:Huntfind", function()
 	players, distances, coords = GetClosestPlayers(GetEntityCoords(PlayerPedId(), 0),150)
 	if(#players > 0) then
 		TriggerServerEvent('huntAccepted', players, distances, coords)
-		TriggerEvent("DoLongHudText", 'Hunting',1)
+		TriggerEvent("DoLongHudText", 'Caçando...',1)
 	else
-		TriggerEvent("DoLongHudText", 'No Scent to pickup on..',2)
+		TriggerEvent("DoLongHudText", 'Ninguem para caçar',2)
 	end
 
 end)
@@ -2955,7 +2955,7 @@ AddEventHandler("K9:Sniff", function()
 	if(distance ~= -1 and distance < 10) then
 		TriggerServerEvent('sniffAccepted',GetPlayerServerId(t))
 	else
-		TriggerEvent("DoLongHudText", 'No Player Found',2)
+		TriggerEvent("DoLongHudText", 'Ninguem por perto',2)
 	end
 
 end)
